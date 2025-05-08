@@ -17,7 +17,7 @@ public class TwoSum {
                 return new int[] {
                     res.get(complement), i
                 };
-                res.put(nums[i], i);
+             res.put(nums[i], i);
             }
             return new int[0]; 
         }
