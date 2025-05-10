@@ -1,0 +1,11 @@
+# Fichiers IntelliJ / JetBrains
+.idea/
+*.iml
+
+# Dossier de sortie
+/out/
+target/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
