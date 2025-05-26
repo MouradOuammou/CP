@@ -14,7 +14,7 @@ public class KeyboardRow {
             }
         }
 
-        return result.toArray(new String[0]);
+        return result.toArray(new String[result.size()]);
     }
 
     private static boolean isInOneRow(String word, String row) {

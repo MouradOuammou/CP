@@ -1,8 +1,11 @@
 
-import java.util.TreeSet;
 
 public class RemoveDeplicate {
-   public static int removeDuplicates(int[] nums) {
+    public static void main(String[] args) {
+    int tab [] = {2,2,2,6,4,8,7,1,1,2,3};
+      System.out.println(removeDuplicates(tab));  
+    }
+        public static int removeDuplicates(int[] nums) {
     int n = nums.length;
     int count = 0 ;
     
@@ -12,9 +15,9 @@ public class RemoveDeplicate {
             nums[count] = nums[i + 1]; 
         }
     }
+    System.out.println(nums.length);
     
     return count + 1;
 }
-
     
 }

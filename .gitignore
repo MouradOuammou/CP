@@ -1,11 +1,11 @@
 # Fichiers IntelliJ / JetBrains
-.idea/
-*.iml
+.idea/          ← ignore les fichiers de configuration d'IntelliJ
+*.iml           ← ignore les fichiers `.iml` des projets IntelliJ
 
 # Dossier de sortie
-/out/
-target/
+/out/           ← ignore le dossier de compilation (souvent utilisé dans les projets Java)
+target/         ← ignore le dossier de sortie pour Maven (Java aussi)
 
 # Fichiers système
-.DS_Store
-Thumbs.db
+.DS_Store       ← fichier macOS (inutile dans un repo)
+Thumbs.db       ← fichier Windows (inutile aussi)
