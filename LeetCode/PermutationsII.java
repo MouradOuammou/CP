@@ -3,37 +3,30 @@ import java.util.List;
 
 public class PermutationsII {
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3};
+        int[] nums = {1, 1, 2 };
         List<List<Integer>> result = permute(nums);
         System.out.println(result);
     }
 
     public static List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        f(nums, result, 0);
-        return result;
+        List<List<Integer>> resultList = new ArrayList<>();
+            backtrack(resultList,new ArrayList<>(), nums , new boolean[nums.length]);
+        return resultList;
     }
 
-    public static void f(int[] nums, List<List<Integer>> result, int index) {
-        if (index == nums.length) {
-            List<Integer> perms = new ArrayList<>();
-            for (int el : nums) {
-                perms.add(el); // ✅ on ajoute chaque élément de nums dans une seule liste
-            }
-            result.add(perms); // ✅ on ajoute cette liste au résultat
-            return;
+      private static void backtrack(List<List<Integer>> resultList , ArrayList <Integer>  templist , int [] nums , boolean[] used){
+        if(templist.size() == nums.length && !resultList.contains(templist)){
+            resultList.add(new ArrayList<>(templist));
+            return ; 
         }
+        for(int i = 0 ; i< nums.length ; i++ ){
 
-        for (int i = index; i < nums.length; i++) {
-            swap(nums, i, index); // place chaque élément à la position "index"
-            f(nums, result, index + 1); // appelle récursivement avec l'index suivant
-            swap(nums, i, index); // annule le swap (backtracking)
+            if(used[i]) continue;
+            used[i] = true  ; 
+            templist.add(nums[i]);
+            backtrack(resultList, templist, nums, used);
+            used[i] = false ;
+            templist.remove(templist.size() -1) ; 
         }
-    }
-
-    private static void swap(int[] nums, int i, int j) {
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
     }
 }
