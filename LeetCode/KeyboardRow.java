@@ -5,7 +5,6 @@ public class KeyboardRow {
         String row1 = "qwertyuiop";
         String row2 = "asdfghjkl";
         String row3 = "zxcvbnm";
-        int n = words.length;
         List<String> result = new ArrayList<>();
         for (String word : words) {
             String lowerWord = word.toLowerCase();

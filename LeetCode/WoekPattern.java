@@ -8,8 +8,6 @@ class WordPattern {
      public static void main(String[] args) {
         String a = "abba" ,  t = "dog dog dog dog" ; // true
         System.out.println("########".repeat(3));
-        String b= "aaaa" ,  e = "dog cat cat dog"; // true 
-        String c= "abba" , f = "dog cat cat fish" ; //true 
         System.out.println(wordPattern(a, t));
 
         
