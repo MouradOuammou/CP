@@ -21,6 +21,7 @@ public class RansomNote {
             char c = ransomNote.charAt(i);
             System.out.println(c);
             if (!res.containsKey(c) || res.get(c) == 0) {
+                System.out.println(res.containsKey(c));
                 return false; 
             }
             res.put(c, res.get(c) - 1);  
